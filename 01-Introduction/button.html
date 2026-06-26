@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            font-family: "Helvetica Neue", "Helvetica", sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid rgb(200 200 0 / 60%);
+            background-color: rgb(0 217 217 / 60%);
+            color: rgb(100 0 0 / 100%);
+            box-shadow: 1px 1px 2px rgb(0 0 200 / 40%);
+            border-radius: 10px;
+            padding: 3px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button>Player 1: Chris</button>
+
+    <!-- Inline JvaScript is written inside an HTML element's attribute. The code below is placed in the button's onclick attribute so that it runs when the button is clicked. -->
+    <button onclick="createParagraph()">Click me!</button>
+
+    <p>Type your name in the prompt that appears when you click the button.</p>
+
+
+
+    <!-- Internal JavaScript is written inside a <script> tag. It can be placed in the <head> or <body> of the HTML document. The code below is placed at the end of the <body> so that it runs after the button has been created. -->
+    <script>
+        function updateName() {
+            const name = prompt("Enter your name");
+            button.textContent = `Player 1: ${name}`;
+        }
+
+        const button = document.querySelector("button");
+        button.addEventListener("click", updateName);
+    </script>
+
+
+
+    <!-- External JavaScript is written in a separate file with a .js extension. The code below is placed at the end of the <body> so that it runs after the button has been created. -->
+    <script src="script.js"></script>
+</body>
+
+</html>
